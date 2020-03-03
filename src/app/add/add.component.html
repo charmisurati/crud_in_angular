@@ -1,0 +1,90 @@
+<form [formGroup]="addform" (ngSubmit)="submitform()">
+<table align="center" >
+
+    <h4 >Basic Form:</h4>
+
+    <tr>
+        <td>
+            Name: <input type="text" formControlName="uname">
+            <div class="alert alert-danger" *ngIf="addform.controls.uname.invalid && 
+            (addform.controls.uname.dirty || addform.controls.uname.touched)">
+                <div *ngIf="addform.controls.uname.errors.required">
+                    This field id required
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Email: &nbsp;<input type="email"  formControlName="email">
+            <div class="alert alert-danger" *ngIf="addform.controls.email.invalid &&
+             (addform.controls.email.dirty   || addform.controls.email.touched)">
+
+                <div *ngIf = "addform.controls.email.errors.required">
+                    this filed is requreid
+
+                 </div>
+                 <div *ngIf = "addform.controls.email.errors.email">
+                     email is  Invalid
+
+                  </div>
+
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+        Address: <textarea rows="4" cols="50" formControlName="address"></textarea>
+        <div class="alert alert-danger" *ngIf="addform.controls.address.invalid &&( addform.controls.address.dirty || addform.controls.address.touched)">
+
+            <div *ngIf = "addform.controls.address.errors.required">
+                this filed is requreid
+
+             </div>
+        </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Number: <input type="text" formControlName="number">
+            <div class="alert alert-danger" *ngIf="addform.controls.number.invalid &&( addform.controls.number.dirty || addform.controls.number.touched)">
+
+                <div *ngIf = "addform.controls.number.errors.required">
+                    this filed is requreid
+    
+                 </div>
+                 <div *ngIf = "addform.controls.number.errors.pattern">
+                    mobile not valid 
+                 </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label
+    formArrayName="orders"
+    *ngFor="let order of addform.controls.orders.controls; let i = index"
+  >
+    <input type="checkbox" [formControlName]="i" />
+    {{ordersData[i].name}}
+  </label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Gender: <input type="radio" formControlName="gender" value="male">Male
+                    <input type="radio"  formControlName="gender" value="Female" [checked]="true">Female
+             
+                    
+        </td>
+
+    </tr>
+    <tr>
+        <td>
+            <div class="button">
+            <button type="submit"  class="btn btn-primary">Submit</button>
+        </div>
+        </td>
+    </tr>
+</table>
+</form>

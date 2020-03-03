@@ -1,0 +1,40 @@
+<table class="table">
+    <thead>
+    <tr>
+       
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Hobbies</th>
+        <th>Number</th>
+        <th>Gender</th>
+    
+       
+    </tr>
+</thead>
+<tbody>
+    <tr  *ngFor="let c of arr">
+       
+        <td>{{c.id}}</td>
+        <td>{{c.name}}</td>
+        <td>{{c.email}}</td>
+        <td>{{c.address}}</td>
+        <td>{{c.hobbies}}</td>
+        <td>{{c.number}}</td>
+        <td>{{c.gender}}</td>
+        <td>
+            <a [routerLink]="['/edit',{id:c.id}]"> 
+              <button type="button" class="btn btn-primary">Edit</button>
+            </a>
+          </td>
+        <td> 
+            <a  (click)="delete(c.id)">
+                 <button type="button" class="btn btn-danger">Delete</button>
+          </a> 
+        </td>
+        
+       
+    </tr>
+</tbody>
+</table>

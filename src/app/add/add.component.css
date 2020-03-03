@@ -1,0 +1,14 @@
+table{
+
+   
+    margin-top: 20px;
+    width: 300px;
+}
+
+table,tr,td{
+    border: 1px solid black;
+}
+
+.button{
+    text-align: center;
+}

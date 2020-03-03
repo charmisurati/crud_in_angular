@@ -1,0 +1,55 @@
+<form [formGroup]="editform" (ngSubmit)="editsubmitform()">
+    <table align="center" >
+    
+        <h4>Basic Form:</h4>
+    
+        <tr>
+            <td>
+                Name: <input type="text" formControlName="uname">
+               
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Email: &nbsp;<input type="email"  formControlName="email">
+               
+            </td>
+        </tr>
+        <tr>
+            <td>
+            Address: <textarea rows="4" cols="50" formControlName="address"></textarea>
+           
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Number: <input type="text" formControlName="number">
+                
+            </td>
+        </tr>
+        <tr>
+            <!-- <td>
+                Hobbies: <input type="checkbox" formControlName="singing" name="hobby" [checked]="true">Singing
+                          <input type="checkbox" formControlName="painting" name="hobby"> Painting
+    
+    
+            </td> -->
+        </tr>
+        <tr>
+            <td>
+                Gender: <input type="radio" formControlName="gender" value="male">Male
+                        <input type="radio"  formControlName="gender" value="Female" [checked]="true">Female
+                 
+                        
+            </td>
+    
+        </tr>
+        <tr>
+            <td>
+                <div class="button">
+                <button type="submit"  class="btn btn-primary">Submit</button>
+            </div>
+            </td>
+        </tr>
+    </table>
+    </form>
